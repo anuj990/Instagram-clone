@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -35,7 +36,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         unfocusedIndicatorColor = Color.LightGray,
         cursorColor = Color.Black,
     )
-
+    val PrimaryBlue = Color(0xFF0064E0)
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var usernameFocused by remember { mutableStateOf(false) }
@@ -144,7 +145,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 )
             )
         }
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = { /* Handle login */ },
             modifier = Modifier
@@ -165,19 +166,33 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         }) {
             Text(text = "Forgotten password?", color = Color.Black, fontSize = 16.sp)
         }
-        Spacer(modifier.padding(bottom = 200.dp))
+
+        Spacer(modifier = Modifier.height(200.dp))
         OutlinedButton(
             onClick = {
+
             },
             modifier = Modifier.fillMaxWidth(),
-            border = BorderStroke(1.dp, Color(0xFF257CBD)),
-            colors = ButtonDefaults.buttonColors(
+            border = BorderStroke(1.dp, PrimaryBlue),
+            colors = ButtonDefaults.outlinedButtonColors(
                 containerColor = Color.White,
-                contentColor = Color.Black
+                contentColor = PrimaryBlue
             ),
             shape = RoundedCornerShape(27.dp)
         ) {
-            Text(text = "Create new account", color = LightBlue, fontSize = 16.sp)
+            Text(
+                text = "Create new account",
+                fontSize = 16.sp
+            )
         }
+        Spacer(modifier = Modifier.height(12.dp))
+        Image(
+            painter = painterResource(R.drawable.meta_logo),
+            contentDescription = null,
+            modifier = Modifier.size(90.dp),
+            colorFilter = ColorFilter.tint(Color.Gray)
+        )
+
+
     }
 }
