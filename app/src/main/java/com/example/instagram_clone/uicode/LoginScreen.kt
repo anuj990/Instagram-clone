@@ -25,9 +25,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.instagram_clone.R
 import com.example.instagram_clone.ui.theme.LightBlue
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.work.Configuration
 
-@Preview(showSystemUi = true, showBackground = true)
-@Composable
+@Preview(
+    name = "Dark Mode Preview",
+    showBackground = true,
+)@Composable
 fun LoginScreen(modifier: Modifier = Modifier) {
     val colors = TextFieldDefaults.colors(
         focusedContainerColor = Color.Transparent,

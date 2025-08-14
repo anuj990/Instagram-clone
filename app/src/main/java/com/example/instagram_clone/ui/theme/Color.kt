@@ -12,3 +12,7 @@ val Pink40 = Color(0xFF7D5260)
 
 val LightGray = Color(0xFFC2BEBE)
 var LightBlue = Color(0xFF165FA8)
+val PrimaryBlue = Color(0xFF0064E0)
+val Gray = Color(0xFF808080)
+val White = Color(0xFFFFFFFF)
+val Black = Color(0xFF000000)
